@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Swap - Sign Up</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../cssfile/navbar.css">
+  <link rel="stylesheet" href="../cssfile/sign.css">
+
+  <style>
+    script,
+    style {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-link"></i>
+      <h1>Skill <span>Swap</span></h1>
+    </div>
+
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="explore skills.html">Explore</a>
+      <a href="community.html">Community</a>
+      <a href="aboutit.html">About it</a>
+      <a href="how-it-works.html">How it works</a>
+    </div>
+
+    <div class="nav-btns">
+      <a href="login.html" class="login-btn">
+        <i class="fa-regular fa-user"></i> Login
+      </a>
+
+      <a href="sign.html" class="join-btn">
+        🚀 Join Now
+      </a>
+    </div>
+  </nav>
+
+  <div class="signup-wrapper">
+    <section class="brand-side">
+      <div class="brand">Skill Swap</div>
+
+      <h1>Create your account and start swapping skills</h1>
+
+      <p>
+        Join the community, add your skills, discover new learning partners,
+        and grow faster by sharing what you know.
+      </p>
+
+      <div class="points">
+        <div class="point"><span class="dot"></span> Build your learning profile</div>
+        <div class="point"><span class="dot"></span> Connect with skill partners</div>
+        <div class="point"><span class="dot"></span> Start your first swap today</div>
+      </div>
+    </section>
+
+    <section class="signup-card">
+      <h2>Sign Up</h2>
+      <p>Fill in your details to create your account.</p>
+
+      <form id="signupForm">
+        <div class="grid-2">
+          <div class="input-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="First name" required>
+          </div>
+
+          <div class="input-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Last name" required>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+        </div>
+
+       <div class="input-group">
+  <label for="password">Password</label>
+  <div class="input-wrapper">
+    <input type="password" id="password" placeholder="Create a password" required>
+    <button type="button" class="toggle-btn" onclick="togglePassword('password', this)">
+      <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+      </svg>
+      <svg class="eye-slash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+        <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+        <line x1="1" y1="1" x2="23" y2="23"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<div class="input-group">
+  <label for="confirm">Confirm Password</label>
+  <div class="input-wrapper">
+    <input type="password" id="confirm" placeholder="Re-enter your password" required>
+    <button type="button" class="toggle-btn" onclick="togglePassword('confirm', this)">
+      <svg class="eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+      </svg>
+      <svg class="eye-slash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+        <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+        <line x1="1" y1="1" x2="23" y2="23"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  function togglePassword(id, btn) {
+    const input = document.getElementById(id);
+    const isHidden = input.type === 'password';
+    input.type = isHidden ? 'text' : 'password';
+    btn.querySelector('.eye-open').style.display = isHidden ? 'none' : 'block';
+    btn.querySelector('.eye-slash').style.display = isHidden ? 'block' : 'none';
+  }
+</script>
+
+        <div class="input-group">
+          <label for="role">I want to</label>
+          <select id="role" required>
+            <option value="">Choose one</option>
+            <option value="teach">Teach skills</option>
+            <option value="learn">Learn skills</option>
+            <option value="both">Both teach and learn</option>
+          </select>
+        </div>
+
+        <div class="check-row">
+          <input type="checkbox" id="terms" required>
+          <label for="terms">
+            I agree to the Terms and Privacy Policy of Skill Swap.
+          </label>
+        </div>
+
+      <button type="submit" class="btn">Create Account</button>
+        <div class="login-link">
+          Already have an account? <a href="login.html">Login</a>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <script src="htmlfile/backend/sign.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Swap - Sign Up</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../cssfile/sign.css">
+
+</head>
+<body>
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../cssfile/navbar.css">
+<link rel="stylesheet" href="../cssfile/sign.css">
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <i class="fa-solid fa-link"></i>
+        <h1>Skill <span>Swap</span></h1>
+    </div>
+
+    <!-- NAV LINKS -->
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="explore skills.html">Explore</a>
+        <a href="community.html">Community</a>
+        <a href="aboutit.html">About it</a>
+        <a href="how-it-works.html">How it works</a>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="nav-btns">
+
+        <a href="#" class="login-btn">
+            <i class="fa-regular fa-user"></i> Login
+        </a>
+
+        <a href="#" class="join-btn">
+            🚀 Join Now
+        </a>
+
+    </div>
+
+</nav>
+  <div class="signup-wrapper">
+    <section class="brand-side">
+      <div class="brand">Skill Swap</div>
+      <h1>Create your account and start swapping skills</h1>
+      <p>
+        Join the community, add your skills, discover new learning partners, and grow faster by sharing what you know.
+      </p>
+
+      <div class="points">
+        <div class="point"><span class="dot"></span> Build your learning profile</div>
+        <div class="point"><span class="dot"></span> Connect with skill partners</div>
+        <div class="point"><span class="dot"></span> Start your first swap today</div>
+      </div>
+    </section>
+
+    <section class="signup-card">
+      <h2>Sign Up</h2>
+      <p>Fill in your details to create your account.</p>
+
+      <form id="signupForm">
+        <div class="grid-2">
+          <div class="input-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="   " required>
+          </div>
+
+          <div class="input-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="   " required>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Create a password" required>
+        </div>
+
+        <div class="input-group">
+          <label for="confirm">Confirm Password</label>
+          <input type="password" id="confirm" placeholder="Re-enter your password" required>
+        </div>
+
+        <div class="input-group">
+          <label for="role">I want to</label>
+          <select id="role" required>
+            <option value="">Choose one</option>
+            <option value="teach">Teach skills</option>
+            <option value="learn">Learn skills</option>
+            <option value="both">Both teach and learn</option>
+          </select>
+        </div>
+
+        <div class="check-row">
+          <input type="checkbox" required>
+          <label>I agree to the Terms and Privacy Policy of Skill Swap.</label>
+        </div>
+
+        <button type="submit" class="btn">Create Account</button>
+
+        <div class="login-link">
+          Already have an account? <a href="login.html">Login</a>
+        </div>
+      </form>
+    </section>
+  </div>
+ <!-- CONNECT YOUR JS FILE HERE -->
+ <script src="backend/sign.js" defer></script>
+</body>
+</html>
