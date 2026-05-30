@@ -1,104 +1,86 @@
-// to this
-const API = "http://localhost:5000";let allSkills = []; // store all skills globally
-
-// Fetch and render skills
-async function loadSkills() {
-  const grid = document.getElementById("skillsGrid");
-  grid.innerHTML = `<p class="loading-msg">Loading skills...</p>`;
-
-  try {
-    const res = await fetch(`${API}/api/skills`);
-    allSkills = await res.json();
-
-    // update count
-    const countEl = document.getElementById("skillCount");
-    if (countEl) countEl.textContent = allSkills.length;
-
-    renderSkills(allSkills);
-
-  } catch (err) {
-    grid.innerHTML = `<p class="loading-msg" style="color:#f472b6;">Failed to load skills. Is the server running?</p>`;
-    console.error(err);
+const skills = [
+  {
+    name: "Web Development",
+    category: "Technology",
+    teacher: "Ayush",
+    icon: "💻"
+  },
+  {
+    name: "Graphic Design",
+    category: "Design",
+    teacher: "Rohan",
+    icon: "🎨"
+  },
+  {
+    name: "Guitar Basics",
+    category: "Music",
+    teacher: "Priya",
+    icon: "🎸"
+  },
+  {
+    name: "English Speaking",
+    category: "Language",
+    teacher: "Aman",
+    icon: "🌍"
   }
+];
+
+const skillsGrid = document.getElementById("skillsGrid");
+const skillCount = document.getElementById("skillCount");
+
+function displaySkills(skillList) {
+  skillsGrid.innerHTML = "";
+
+  skillList.forEach(skill => {
+    skillsGrid.innerHTML += `
+      <div class="skill-card">
+        <div class="skill-icon">${skill.icon}</div>
+        <h3>${skill.name}</h3>
+        <p><strong>Category:</strong> ${skill.category}</p>
+        <p><strong>Teacher:</strong> ${skill.teacher}</p>
+        <button class="view-btn">View Skill</button>
+      </div>
+    `;
+  });
+
+  skillCount.textContent = skillList.length;
 }
 
-// Render skills to grid
-function renderSkills(skills) {
-  const grid = document.getElementById("skillsGrid");
+displaySkills(skills);
+// search function
+const searchInput = document.getElementById("searchInput");
 
-  if (skills.length === 0) {
-    grid.innerHTML = `
-      <div class="empty-msg">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <p>No skills found.</p>
-      </div>`;
-    return;
-  }
+searchInput.addEventListener("keyup", () => {
+  const value = searchInput.value.toLowerCase();
 
-  const iconColors = [
-    "icon-purple", "icon-cyan", "icon-pink",
-    "icon-green", "icon-amber", "icon-blue",
-    "icon-red", "icon-teal"
-  ];
+  const filtered = skills.filter(skill =>
+    skill.name.toLowerCase().includes(value) ||
+    skill.category.toLowerCase().includes(value) ||
+    skill.teacher.toLowerCase().includes(value)
+  );
 
-  grid.innerHTML = skills.map((skill, i) => `
-    <div class="skill-card">
-      <div class="card-top">
-        <div class="card-icon ${iconColors[i % iconColors.length]}">
-          <i class="ti ${skill.icon || 'ti-star'}"></i>
-        </div>
-        <div class="card-info">
-          <h3>${skill.title}</h3>
-          <span>${skill.category}</span>
-        </div>
-      </div>
-      <p class="card-desc">${skill.description}</p>
-      <div class="card-tags">
-        ${skill.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
-      </div>
-      <div class="card-footer">
-        <span class="members"><span>${skill.members}</span> members</span>
-        <button class="swap-btn">Swap</button>
-      </div>
-    </div>
-  `).join("");
-}
+  displaySkills(filtered);
+});
+// filter button
+const filterBtns = document.querySelectorAll(".filter-btn");
 
-// Filter buttons — strip emoji from button text
-document.querySelectorAll(".filter-btn").forEach(btn => {
+filterBtns.forEach(btn => {
   btn.addEventListener("click", () => {
-    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+
+    document.querySelector(".filter-btn.active")
+      .classList.remove("active");
+
     btn.classList.add("active");
 
-    // strip emoji and spaces to get clean category name
-    const category = btn.getAttribute("data-category");
+    const category = btn.dataset.category;
 
     if (category === "All") {
-      renderSkills(allSkills);
+      displaySkills(skills);
     } else {
-      const filtered = allSkills.filter(s => s.category === category);
-      renderSkills(filtered);
+      const filtered = skills.filter(
+        skill => skill.category === category
+      );
+      displaySkills(filtered);
     }
   });
 });
-
-// Search — filter from allSkills array
-document.getElementById("searchInput").addEventListener("input", (e) => {
-  const query = e.target.value.toLowerCase().trim();
-
-  if (query === "") {
-    renderSkills(allSkills);
-    return;
-  }
-
-  const filtered = allSkills.filter(skill =>
-    skill.title.toLowerCase().includes(query) ||
-    skill.category.toLowerCase().includes(query) ||
-    skill.tags.some(tag => tag.toLowerCase().includes(query))
-  );
-
-  renderSkills(filtered);
-});
-
-// Load on page open
-loadSkills();

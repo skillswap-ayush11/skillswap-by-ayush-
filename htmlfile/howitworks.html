@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skill Swap - Explore Skills</title>
+  <title>Skill Swap - How It Works</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   <link rel="stylesheet" href="../cssfile/navbar.css">
-  <link rel="stylesheet" href="../cssfile/explore_skills.css">
+  <link rel="stylesheet" href="../cssfile/howitworks.css">
 </head>
 
 <body>
@@ -38,46 +38,39 @@
       </a>
     </div>
   </nav>
+<section class="works">
 
-  <!-- PAGE CONTENT -->
-  <div class="explore-wrapper">
+  <h1>How SkillSwap Works</h1>
 
-    <!-- HERO -->
-    <div class="explore-hero">
-      <h1>Explore <span>Skills</span></h1>
-      <p>Discover what people are teaching and learning around the world</p>
+  <div class="work-container">
 
-      <!-- SEARCH -->
-      <div class="search-bar">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="searchInput" placeholder="Search skills, topics, or people...">
-      </div>
+    <div class="work-card">
+      <span>👤</span>
+      <h2>Create Profile</h2>
+      <p>Sign up and showcase your skills.</p>
     </div>
 
-    <!-- FILTERS -->
-    <div class="filters">
-      <button class="filter-btn active" data-category="All">All</button>
-      <button class="filter-btn" data-category="Technology">💻 Technology</button>
-      <button class="filter-btn" data-category="Design">🎨 Design</button>
-      <button class="filter-btn" data-category="Music">🎵 Music</button>
-      <button class="filter-btn" data-category="Language">🌍 Language</button>
-      <button class="filter-btn" data-category="Business">💼 Business</button>
-      <button class="filter-btn" data-category="Art">🖌️ Art</button>
+    <div class="work-card">
+      <span>🔍</span>
+      <h2>Find Skills</h2>
+      <p>Explore skills from different creators.</p>
     </div>
 
-    <!-- STATS BAR -->
-    <div class="stats-bar">
-      <div class="stat-item"><span id="skillCount">0</span> Skills Available</div>
-      <div class="stat-item">🔥 Updated Live</div>
+    <div class="work-card">
+      <span>💬</span>
+      <h2>Connect</h2>
+      <p>Chat and start learning together.</p>
     </div>
 
-    <!-- SKILLS GRID -->
-    <div class="skills-grid" id="skillsGrid">
-      <!-- loaded dynamically -->
+    <div class="work-card">
+      <span>🚀</span>
+      <h2>Grow</h2>
+      <p>Improve yourself and build connections.</p>
     </div>
 
   </div>
 
+</section>
     <body>
 
      <footer class="footer">
@@ -137,8 +130,5 @@
 
 </footer>
 </body>
-
- <script src="../backend/explore.js" defer></script>
-<script src="backend/home.js" defer></script>
 </body>
 </html>
