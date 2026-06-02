@@ -450,75 +450,80 @@ body::before{
 
 }
 
-/* footer section */
-.footer{
-    background:#0f172a;
-    color:white;
-    padding:60px 8% 20px;
-    margin-top:50px;
+.skeleton{
+    position:relative;
+    overflow:hidden;
+    background:#1b1b35;
+    border-radius:10px;
 }
 
-.footer-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:40px;
+.skeleton::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-150px;
+    width:150px;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+    animation:shine 1.3s infinite;
 }
 
-.footer-section h2,
-.footer-section h3{
-    margin-bottom:15px;
+@keyframes shine{
+    100%{
+        left:100%;
+    }
 }
 
-.footer-section p{
-    color:#cbd5e1;
-    line-height:1.7;
+.logo-sk{
+    width:180px;
+    height:40px;
 }
 
-.footer-section a{
-    display:block;
-    color:#cbd5e1;
-    text-decoration:none;
-    margin:10px 0;
-    transition:0.3s;
+.nav-sk{
+    width:80px;
+    height:20px;
 }
 
-.footer-section a:hover{
-    color:#38bdf8;
-    transform:translateX(5px);
-}
-
-.social-icons{
-    display:flex;
-    gap:15px;
-    margin-top:15px;
-}
-
-.social-icons a{
-    width:45px;
+.btn-sk{
+    width:120px;
     height:45px;
-    background:#1e293b;
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:white;
-    text-decoration:none;
-    font-size:18px;
-
-    transition:0.3s;
+    border-radius:30px;
 }
 
-.social-icons a:hover{
-    background:#2563eb;
-    transform:translateY(-5px);
+.badge-sk{
+    width:220px;
+    height:40px;
+    margin:20px auto;
 }
 
-.footer-bottom{
-    border-top:1px solid #334155;
-    margin-top:40px;
-    padding-top:20px;
-    text-align:center;
-    color:#94a3b8;
+.title-sk{
+    width:60%;
+    height:60px;
+    margin:15px auto;
+}
+
+.title-sk.small{
+    width:40%;
+}
+
+.text-sk{
+    width:50%;
+    height:20px;
+    margin:20px auto;
+}
+
+.hero-btn-sk{
+    width:200px;
+    height:55px;
+    border-radius:40px;
+}
+
+.footer-box{
+    width:220px;
+    height:120px;
 }

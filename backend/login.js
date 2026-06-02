@@ -29,3 +29,16 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     console.error(err);
   }
 });
+
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("login-skeleton").style.display="none";
+
+document.getElementById("main-content").style.display="block";
+
+},2000);
+
+});

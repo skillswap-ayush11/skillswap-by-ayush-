@@ -17,3 +17,14 @@ function logout() {
   localStorage.removeItem("user");
   window.location.href = "login.html";
 }
+
+window.addEventListener("load", function () {
+
+    setTimeout(() => {
+
+        document.getElementById("skeleton-loader").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+
+    }, 2000); // Show skeleton for 2 seconds
+
+});

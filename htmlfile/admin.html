@@ -1,65 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin — Add Skill</title>
-  <style>
-    body { font-family: sans-serif; background: #050615; color: #fff; padding: 40px; }
-    input, select, textarea {
-      display: block; width: 100%; margin-bottom: 12px;
-      padding: 10px 14px; border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.08);
-      color: #fff; font-size: 14px;
-    }
-    button {
-      padding: 12px 28px; border-radius: 999px; border: none;
-      background: linear-gradient(135deg, #8b5cf6, #22d3ee);
-      color: #fff; font-size: 15px; font-weight: 700; cursor: pointer;
-    }
-    #msg { margin-top: 14px; font-size: 14px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Swap Admin</title>
+<link rel="stylesheet" href="admin.css">
 </head>
 <body>
-  <h2>Add New Skill</h2>
 
-  <input type="password" id="adminKey" placeholder="Admin Key">
-  <input type="text"     id="title"    placeholder="Skill Title (e.g. Web Development)">
-  <select id="category">
-    <option>Technology</option>
-    <option>Design</option>
-    <option>Music</option>
-    <option>Language</option>
-    <option>Business</option>
-    <option>Art</option>
-  </select>
-  <textarea id="description" rows="3" placeholder="Short description..."></textarea>
-  <input type="text" id="tags" placeholder="Tags (comma separated): HTML, CSS, React">
-  <input type="text" id="icon" placeholder="Tabler icon: ti-code, ti-palette, ti-music...">
+<div class="skeleton-page">
 
-  <button onclick="addSkill()">Add Skill</button>
-  <p id="msg"></p>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="skeleton logo"></div>
 
-  <script>
-    async function addSkill() {
-      const data = {
-        adminKey:    document.getElementById("adminKey").value,
-        title:       document.getElementById("title").value,
-        category:    document.getElementById("category").value,
-        description: document.getElementById("description").value,
-        tags:        document.getElementById("tags").value.split(",").map(t => t.trim()),
-        icon:        document.getElementById("icon").value,
-      };
+        <div class="nav-links">
+            <div class="skeleton nav-item"></div>
+            <div class="skeleton nav-item"></div>
+            <div class="skeleton nav-item"></div>
+            <div class="skeleton nav-item"></div>
+            <div class="skeleton nav-item"></div>
+        </div>
 
-      const res = await fetch("http://localhost:5000/api/skills/add", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+        <div class="nav-buttons">
+            <div class="skeleton login-btn"></div>
+            <div class="skeleton join-btn"></div>
+        </div>
+    </nav>
 
-      const result = await res.json();
-      document.getElementById("msg").textContent = result.message;
-    }
-  </script>
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <!-- Left Cards -->
+        <div class="left-skills">
+            <div class="skeleton skill-card"></div>
+            <div class="skeleton skill-card"></div>
+        </div>
+
+        <!-- Center Content -->
+        <div class="hero-content">
+
+            <div class="skeleton badge"></div>
+
+            <div class="skeleton title-line"></div>
+            <div class="skeleton title-line large"></div>
+            <div class="skeleton title-line"></div>
+
+            <div class="skeleton text-line"></div>
+            <div class="skeleton text-line small"></div>
+
+            <div class="hero-buttons">
+                <div class="skeleton btn-primary"></div>
+                <div class="skeleton btn-secondary"></div>
+            </div>
+
+        </div>
+
+        <!-- Right Cards -->
+        <div class="right-skills">
+            <div class="skeleton skill-card"></div>
+            <div class="skeleton skill-card"></div>
+        </div>
+
+    </section>
+
+    <!-- Footer Skeleton -->
+    <footer class="footer">
+
+        <div class="footer-top">
+            <div class="skeleton footer-logo"></div>
+
+            <div class="footer-links">
+                <div class="skeleton footer-link"></div>
+                <div class="skeleton footer-link"></div>
+                <div class="skeleton footer-link"></div>
+                <div class="skeleton footer-link"></div>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <div class="skeleton social"></div>
+            <div class="skeleton social"></div>
+            <div class="skeleton social"></div>
+            <div class="skeleton social"></div>
+        </div>
+
+        <div class="skeleton copyright"></div>
+
+    </footer>
+
+</div>
+
 </body>
 </html>
