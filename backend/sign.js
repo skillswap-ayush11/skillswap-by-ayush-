@@ -7,7 +7,6 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
     email:     document.getElementById("email").value,
     password:  document.getElementById("password").value,
     confirm:   document.getElementById("confirm").value,
-    role:      document.getElementById("role").value,
   };
 
   if (data.password !== data.confirm) {
@@ -21,7 +20,7 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/signup", {
+    const res = await fetch("http://localhost:5000/api/users/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
