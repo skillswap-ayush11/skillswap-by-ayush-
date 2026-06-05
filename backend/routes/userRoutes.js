@@ -1,3 +1,5 @@
+// registration form
+
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
@@ -22,5 +24,72 @@ router.get("/", async (req, res) => {
   res.json(users);
 });
 
-module.exports = router;
 
+
+// for login
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(400).json({
+        message: "User not found"
+      });
+    }
+
+    if (user.password !== password) {
+      return res.status(400).json({
+        message: "Invalid password"
+      });
+    }
+
+    res.json({
+      message: "Login successful",
+      user
+    });
+
+  } catch (err) {
+    res.status(500).json({
+      error: err.message
+    });
+  }
+});
+
+// skill teach
+router.put("/teach/:id", async (req, res) => {
+  try {
+    const user = await User.findByIdAndUpdate(
+      req.params.id,
+      {
+        skillsTeach: req.body.skillsTeach
+      },
+      { new: true }
+    );
+
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({
+      error: err.message
+    });
+  }
+});
+router.put("/teach/:id", async (req, res) => {
+  try {
+    const user = await User.findByIdAndUpdate(
+      req.params.id,
+      {
+        skillsTeach: req.body.skillsTeach
+      },
+      { new: true }
+    );
+
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({
+      error: err.message
+    });
+  }
+});
+module.exports = router;

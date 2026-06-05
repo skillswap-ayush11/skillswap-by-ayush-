@@ -28,3 +28,15 @@ window.addEventListener("load", function () {
     }, 2000); // Show skeleton for 2 seconds
 
 });
+document.getElementById("startSwapping").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const user = localStorage.getItem("user");
+
+  if (!user) {
+    window.location.href = "signup.html";
+    return;
+  }
+
+  window.location.href = "skillchoose.html";
+});
