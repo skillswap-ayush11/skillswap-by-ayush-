@@ -1,16 +1,5 @@
-// Check if user is logged in
-const token = localStorage.getItem("token");
-const user  = JSON.parse(localStorage.getItem("user"));
 
-const navBtns = document.querySelector(".nav-btns");
 
-if (token && user) {
-  // User is logged in — show Hi, Name + Logout
-  navBtns.innerHTML = `
-    <span class="greeting">👋 Hi, ${user.firstName}</span>
-    <button class="logout-btn" onclick="logout()">Logout</button>
-  `;
-} 
 
 function logout() {
   localStorage.removeItem("token");
@@ -40,3 +29,38 @@ document.getElementById("startSwapping").addEventListener("click", (e) => {
 
   window.location.href = "skillchoose.html";
 });
+const user = JSON.parse(localStorage.getItem("user"));
+
+console.log("User:", user);
+
+if (user) {
+    document.getElementById("loginBtn").style.display = "none";
+    document.getElementById("joinBtn").style.display = "none";
+
+    document.getElementById("userInfo").style.display = "block";
+
+    document.getElementById("userInfo").innerHTML = `
+        <div class="user-profile">
+            <strong>${user.name}</strong><br>
+            <small>${user.email}</small>
+        </div>
+    `;
+}const user = JSON.parse(localStorage.getItem("user"));
+
+if (user) {
+
+    document.getElementById("loginBtn").style.display = "none";
+    document.getElementById("joinBtn").style.display = "none";
+
+    const userInfo = document.getElementById("userInfo");
+
+    userInfo.style.display = "block";
+
+    userInfo.innerHTML = `
+        <div class="user-profile">
+            <strong>👋 ${user.name}</strong>
+            <br>
+            <small>${user.email}</small>
+        </div>
+    `;
+}
