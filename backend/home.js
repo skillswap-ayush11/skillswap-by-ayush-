@@ -45,7 +45,7 @@ if (user) {
             <small>${user.email}</small>
         </div>
     `;
-}const user = JSON.parse(localStorage.getItem("user"));
+}
 
 if (user) {
 
