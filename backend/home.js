@@ -47,8 +47,9 @@ if (user) {
     `;
 }
 
-if (user) {
+const user = JSON.parse(localStorage.getItem("user"));
 
+if (user) {
     document.getElementById("loginBtn").style.display = "none";
     document.getElementById("joinBtn").style.display = "none";
 
@@ -57,10 +58,47 @@ if (user) {
     userInfo.style.display = "block";
 
     userInfo.innerHTML = `
-        <div class="user-profile">
-            <strong>👋 ${user.name}</strong>
-            <br>
-            <small>${user.email}</small>
+        <div class="profile-menu">
+            <button class="profile-btn" onclick="toggleMenu()">
+                👋 ${user.name} ▼
+            </button>
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <div class="user-details">
+                    <strong>${user.name}</strong>
+                    <small>${user.email}</small>
+                </div>
+
+                <a href="skillchoose.html">📚 My Skills</a>
+                <a href="#">👤 Profile</a>
+                <a href="#" onclick="logout()">🚪 Logout</a>
+            </div>
         </div>
     `;
 }
+function toggleMenu() {
+    document
+        .getElementById("dropdownMenu")
+        .classList.toggle("show");
+}
+
+function logout() {
+    localStorage.removeItem("user");
+
+    alert("Logged out successfully!");
+
+    window.location.href = "login.html";
+}
+window.addEventListener("click", function(e){
+
+    if(
+        !e.target.closest(".profile-menu")
+    ){
+        const menu =
+            document.getElementById("dropdownMenu");
+
+        if(menu){
+            menu.classList.remove("show");
+        }
+    }
+});
