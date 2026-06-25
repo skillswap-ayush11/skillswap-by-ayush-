@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Swap — Build Your Profile</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="../cssfile/skillchoose.css">
+<link rel="stylesheet" href="../cssfile/navbar.css">
+<link rel="icon" type="image/png" href="sslogo.png" />
+
+</head>
+
+<body>
+ 
+<!-- BG Orbs -->
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
+ 
+<!-- NAVBAR -->
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../cssfile/navbar.css">
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <i class="fa-solid fa-link"></i>
+        <h1>Skill <span>Swap</span></h1>
+    </div>
+
+    <!-- NAV LINKS -->
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="explore skills.html">Explore</a>
+        <a href="community.html">Community</a>
+        <a href="aboutit.html">About it</a>
+        <a href="how-it-works.html">How it works</a>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="nav-btns">
+
+        <a href="login.html" id="loginBtn" class="login-btn">
+            <i class="fa-regular fa-user"></i> Login
+        </a>
+
+        <a href="sign.html" id="joinBtn" class="join-btn">
+            🚀 Join Now
+        </a>
+
+    </div>
+<div id="userInfo" style="display:none;"></div>
+</nav>
+ 
+ 
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  PAGE 1 — SKILLS I CAN TEACH                          -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page active" id="page-teach">
+  <div class="content">
+ 
+    <!-- Step Indicator -->
+    <div class="steps">
+      <div class="step">
+        <div class="step-dot active">1</div>
+        <div class="step-label active">What I Teach</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-dot">2</div>
+        <div class="step-label">What I Learn</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <div class="step-label">Summary</div>
+      </div>
+    </div>
+ 
+    <!-- Progress Bar -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" style="width:33%"></div>
+    </div>
+ 
+    <!-- Heading -->
+    <div class="heading">
+      <h1>Skills You Can Teach</h1>
+      <p>Share your expertise — select everything you're ready to mentor others in.</p>
+    </div>
+ 
+    <!-- Skill Card -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-teach">🎓</div>
+        <h2>Teaching Skills</h2>
+      </div>
+      <p class="card-sub">Click skills to select. Search to find more.</p>
+ 
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-teach" placeholder="Search skills..." oninput="filterSkills('teach')">
+      </div>
+ 
+      <div class="skills" id="skills-teach"></div>
+ 
+      <div class="selected-tags empty" id="tags-teach"
+           data-placeholder="No skills selected yet — click above to add"></div>
+    </div>
+ 
+    <!-- Experience Level -->
+    <div class="level-card">
+      <h3>Your Experience Level</h3>
+      <div class="levels" id="levels-teach">
+        <div class="level-opt" onclick="setLevel('Beginner', this)">
+          <div class="level-icon">🌱</div>
+          <div class="level-name">Beginner</div>
+          <div class="level-desc">Just starting out</div>
+        </div>
+        <div class="level-opt active" onclick="setLevel('Intermediate', this)">
+          <div class="level-icon">⚡</div>
+          <div class="level-name">Intermediate</div>
+          <div class="level-desc">Solid foundation</div>
+        </div>
+        <div class="level-opt" onclick="setLevel('Advanced', this)">
+          <div class="level-icon">🔥</div>
+          <div class="level-name">Advanced</div>
+          <div class="level-desc">Deep expertise</div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Action -->
+    <div class="btn-row">
+      <button class="btn-primary" onclick="goToPage('learn')">Continue to Learning Goals →</button>
+    </div>
+ 
+  </div>
+</div>
+ 
+ 
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  PAGE 2 — SKILLS I WANT TO LEARN                      -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-learn">
+  <div class="content">
+ 
+    <!-- Step Indicator -->
+    <div class="steps">
+      <div class="step">
+        <div class="step-dot done">✓</div>
+        <div class="step-label">What I Teach</div>
+      </div>
+      <div class="step-line done"></div>
+      <div class="step">
+        <div class="step-dot active">2</div>
+        <div class="step-label active">What I Learn</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <div class="step-label">Summary</div>
+      </div>
+    </div>
+ 
+    <!-- Progress Bar -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" style="width:66%"></div>
+    </div>
+ 
+    <!-- Heading -->
+    <div class="heading">
+      <h1>Skills You Want to Learn</h1>
+      <p>What knowledge do you want to gain? Find your perfect swap partner.</p>
+    </div>
+ 
+    <!-- Skill Card -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-learn">🚀</div>
+        <h2>Learning Goals</h2>
+      </div>
+      <p class="card-sub">Pick the skills you're eager to learn from others.</p>
+ 
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-learn" placeholder="Search skills..." oninput="filterSkills('learn')">
+      </div>
+ 
+      <div class="skills" id="skills-learn"></div>
+ 
+      <div class="selected-tags empty" id="tags-learn"
+           data-placeholder="No skills selected yet — click above to add"></div>
+    </div>
+ 
+    <!-- Actions -->
+    <div class="btn-row">
+      <button class="btn-secondary" onclick="goToPage('teach')">← Back</button>
+      <button class="btn-primary" onclick="goToPage('summary')">Review My Profile →</button>
+    </div>
+ 
+  </div>
+</div>
+ 
+ 
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  PAGE 3 — SUMMARY                                     -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-summary">
+  <div class="content">
+ 
+    <!-- Step Indicator -->
+    <div class="steps">
+      <div class="step">
+        <div class="step-dot done">✓</div>
+        <div class="step-label">What I Teach</div>
+      </div>
+      <div class="step-line done"></div>
+      <div class="step">
+        <div class="step-dot done">✓</div>
+        <div class="step-label">What I Learn</div>
+      </div>
+      <div class="step-line done"></div>
+      <div class="step">
+        <div class="step-dot active">3</div>
+        <div class="step-label active">Summary</div>
+      </div>
+    </div>
+ 
+    <!-- Progress Bar -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" style="width:100%"></div>
+    </div>
+ 
+    <!-- Heading -->
+    <div class="heading">
+      <h1>Your Skill Profile</h1>
+      <p>Looking great! Here's what your swap profile looks like.</p>
+    </div>
+ 
+    <!-- Summary Grid -->
+    <div class="summary-grid">
+      <div class="sum-card">
+        <h4>🎓 Skills I Can Teach</h4>
+        <div class="sum-tags" id="sum-teach"></div>
+      </div>
+      <div class="sum-card">
+        <h4>🚀 Skills I Want to Learn</h4>
+        <div class="sum-tags" id="sum-learn"></div>
+      </div>
+    </div>
+ 
+    <!-- Level Summary -->
+    <div class="sum-card" style="margin-bottom: 28px; display:flex; align-items:center; gap:16px;">
+      <div>
+        <h4 style="font-size:13px; color:#b8b8c9; margin-bottom:12px;">⚡ Experience Level</h4>
+        <div class="level-badge" id="sum-level"></div>
+      </div>
+    </div>
+ 
+    <!-- Actions -->
+    <div class="btn-row">
+      <button class="btn-secondary" onclick="goToPage('learn')">← Edit</button>
+      <button class="btn-primary" onclick="finishProfile()">🎉 Create My Profile</button>
+    </div>
+ 
+  </div>
+</div>
+<script src="../backend/skillchoose.js">defer</script>
+<script src="../backend/navbar.js" defer></script>
+</body>
+</html>

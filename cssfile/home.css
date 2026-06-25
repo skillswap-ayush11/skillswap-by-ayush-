@@ -527,3 +527,56 @@ body::before{
     width:220px;
     height:120px;
 }
+/* Paste into your CSS file */
+.modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal-bg.open { display: flex; }
+.modal {
+  background: #1a1a2e;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 18px;
+  padding: 2rem;
+  max-width: 340px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  animation: popIn 0.2s ease;
+}
+@keyframes popIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+.modal-close {
+  position: absolute;
+  top: 12px; right: 16px;
+  background: none; border: none;
+  color: #64748b; font-size: 1.3rem; cursor: pointer;
+}
+.modal-close:hover { color: #94a3b8; }
+.modal-icon { font-size: 2.6rem; margin-bottom: 0.8rem; }
+.modal h2 { color: #e2e8f0; font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; }
+.modal p { color: #94a3b8; font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.5rem; }
+.modal-btn {
+  display: block; width: 100%;
+  padding: 12px; border-radius: 99px;
+  font-size: 0.92rem; font-weight: 600;
+  cursor: pointer; margin-bottom: 0.6rem; transition: opacity 0.15s;
+}
+.modal-btn.primary {
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: #fff; border: none;
+}
+.modal-btn.secondary {
+  background: transparent; color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+}
+.modal-btn:hover { opacity: 0.85; }
+
+

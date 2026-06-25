@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Skill Swap</title>
+    <title>Skill Swap - home</title>
 
   
     <link rel="stylesheet" href="../cssfile/home.css" />
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="../cssfile/footer.css">
     <link rel="icon" type="image/png" href="sslogo.png" />
+    <link rel="stylrsheet" href="../cssfile/navbar.css"/>
   </head>
 
   <body>
@@ -77,12 +78,14 @@
         <a href="howitworks.html">How it works</a>
       </div>
 
+
       <div class="nav-btns">
-        <a href="login.html" class="login-btn">
+        <a href="login.html" id="loginBtn" class="login-btn">
           <i class="fa-regular fa-user"></i> Login
         </a>
 
-        <a href="sign.html" class="join-btn"> 🚀 Join Now </a>
+        <a href="sign.html" id="joinBtn" class="join-btn"> 🚀 Join Now </a>
+         <div id="userInfo" style="display:none;"></div>
       </div>
     </nav>
 
@@ -103,7 +106,8 @@
       </p>
 
       <div class="hero-btns">
-        <a href="skill.html" class="primary-btn"> Start Swapping Now 🚀 </a>
+        <a href="skillchoose.html" id="startSwapping" class="primary-btn">
+           Start Swapping Now 🚀 </a>
 
         <a href="#" class="secondary-btn"> Explore Skills ✨ </a>
       </div>
@@ -181,10 +185,10 @@
         <div class="footer-section">
             <h3>Support</h3>
 
-            <a href="#">Contact Us</a>
-            <a href="#">Help Center</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="helpcenter.html">Help Center</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
+            <a href="term&conditions.html">Terms & Conditions</a>
         </div>
 
         <div class="footer-section">
@@ -201,9 +205,21 @@
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
 
                 <a href="#"><i class="fab fa-youtube"></i></a>
-
             </div>
         </div>
+    <!-- Login prompt modal — paste anywhere before </body> -->
+        <div class="modal-bg" id="authModal">
+        <div class="modal">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+       <div class="modal-icon">🔒</div>
+
+         <h2>Log in to start swapping</h2>
+        <p>Create a free account or log in to match with learners and teachers.</p>
+    <!-- Change these two lines in your modal -->
+<button class="modal-btn primary" onclick="window.location.href='login.html'">Log in</button>
+<button class="modal-btn secondary" onclick="window.location.href='sign.html'">Create account</button>
+</div>
+</div>
 
     </div>
 
@@ -214,6 +230,7 @@
 </footer>
 </div>
 <script src="../backend/home.js" defer></script>
+<script src="../backend/navbar.js" defer></script>
   </body>
 
 </html>

@@ -36,7 +36,7 @@ body{
         #38bdf8
     );
 
-    -webkit-background-clip:text;
+    background-clip:text;
     color:transparent;
 }
 
@@ -127,18 +127,14 @@ input[type="radio"]{
     width:100%;
     padding:18px;
 
-    border:none;
     border-radius:50px;
-
-    font-size:18px;
-    font-weight:600;
     color:white;
 
-    background:linear-gradient(
-        90deg,
-        #8b5cf6,
-        #06b6d4
-    );
+    background:linear-gradient(to right,#9333ea,#06b6d4);
+    font-size:18px;
+    font-weight:600;
+    
+    
 
     cursor:pointer;
     transition:.3s;

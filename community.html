@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Skill Swap - Community</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../cssfile/community.css">
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../cssfile/navbar.css">
+<link rel="stylesheet" href="../cssfile/footer.css">
+<link rel="icon" type="image/png" href="sslogo.png" />
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<!-- FONT AWESOME -->
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <i class="fa-solid fa-link"></i>
+        <h1>Skill <span>Swap</span></h1>
+    </div>
+
+    <!-- NAV LINKS -->
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="explore_skills.html">Explore</a>
+        <a href="community.html">Community</a>
+        <a href="aboutit.html">About it</a>
+        <a href="howitworks.html">How it works</a>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="nav-btns">
+
+        <a href="login.html"id="loginBtn" class="login-btn">
+            <i class="fa-regular fa-user"></i> Login
+        </a>
+
+        <a href="sign.html"  id="joinBtn"class="join-btn">
+            🚀 Join Now
+        </a>
+        <div id="userInfo" style="display:none;"></div>
+    </div>
+<div id="userInfo" style="display:none;"></div>
+</nav>
+<!-- MAIN -->
+<div class="main">
+
+  <div class="header">🌐 Community Feed</div>
+
+  <!-- CREATE POST -->
+<div class="create-post">
+    <textarea id="postInput" rows="3"
+        placeholder="Share your skill or ask for help..."></textarea>
+
+    <button class="post-btn" onclick="createPost()">
+        Post
+    </button>
+</div>
+
+<!-- New posts will appear here -->
+<div id="feed"></div>
+  <!-- POST -->
+  <div class="post">
+    <div class="post-header">
+      <div class="avatar"></div>
+      <div>
+        <div class="username">Rahul Sharma</div>
+        <div style="font-size:12px;color:gray;">2 hours ago</div>
+      </div>
+    </div>
+
+    <div class="post-content">
+      I can teach UI Design 🎨 looking for someone who knows React ⚛️
+    </div>
+
+    <div class="tags">
+      <span>#UI Design</span>
+      <span>#React</span>
+    </div>
+
+    <div class="actions">
+      <div>❤️ Like</div>
+      <div>💬 Comment</div>
+      <div>🔁 Share</div>
+    </div>
+  </div>
+
+  <!-- POST -->
+  <div class="post">
+    <div class="post-header">
+      <div class="avatar"></div>
+      <div>
+        <div class="username">Anjali Verma</div>
+        <div style="font-size:12px;color:gray;">5 hours ago</div>
+      </div>
+    </div>
+
+    <div class="post-content">
+      Anyone interested in learning Python? I can teach basics 🐍
+    </div>
+
+    <div class="tags">
+      <span>#Python</span>
+      <span>#Beginner</span>
+    </div>
+
+    <div class="actions">
+      <div>❤️ Like</div>
+      <div>💬 Comment</div>
+      <div>🔁 Share</div>
+    </div>
+  </div>
+
+</div>
+    <body>
+
+     <footer class="footer">
+   <footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>Skill Swap</h2>
+            <p>
+                Connect with people around the world,
+                learn new skills, and share your expertise.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse Skills</a>
+            <a href="community.html">Community</a>
+            <a href="about.html">About Us</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Support</h3>
+
+            <a href="#">Contact Us</a>
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Skill Swap. All Rights Reserved.</p>
+    </div>
+
+</footer>
+<script src="../backend/navbar.js"></script>
+</body>
+</body>
+</html>

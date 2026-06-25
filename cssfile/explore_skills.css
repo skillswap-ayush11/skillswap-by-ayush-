@@ -142,7 +142,7 @@ body {
 
 /* ── SKILL CARD ── */
 .skill-card {
-  background: rgba(24, 25, 43, 0.92);
+  background: rgba(19, 19, 28, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 24px;
@@ -328,6 +328,7 @@ body {
 .skill-icon{
   font-size:40px;
   margin-bottom:10px;
+  color:black;
 }
 
 .view-btn{

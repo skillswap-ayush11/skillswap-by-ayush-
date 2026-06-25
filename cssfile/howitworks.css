@@ -77,3 +77,137 @@ p{
     }
 }
 
+/* for show user info in navbar */
+/* USER PROFILE BUTTON */
+
+.profile-menu{
+    position:relative;
+}
+
+.profile-btn{
+    background:linear-gradient(135deg,#8b5cf6,#06b6d4);
+    color:white;
+    border:none;
+    padding:12px 18px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.dropdown-content{
+    position:absolute;
+    top:60px;
+    right:0;
+
+    width:260px;
+
+    background:#111827;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:16px;
+
+    padding:15px;
+
+    display:none;
+
+    z-index:9999;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+}
+
+.dropdown-content.show{
+    display:block;
+}
+
+.user-card{
+    border-bottom:1px solid rgba(255,255,255,.1);
+    padding-bottom:12px;
+    margin-bottom:12px;
+}
+
+.user-card h4{
+    color:white;
+}
+
+.user-card p{
+    color:#9ca3af;
+    font-size:13px;
+}
+
+.dropdown-content a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    border-radius:8px;
+}
+
+.dropdown-content a:hover{
+    background:#1f2937;
+}
+
+
+
+
+/* first letter of name as a avatar */
+
+.profile-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    background:linear-gradient(135deg,#8b5cf6,#06b6d4);
+    color:white;
+
+    border:none;
+    padding:10px 16px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+    font-weight:600;
+}
+
+.avatar-circle{
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    background:white;
+    color:#8b5cf6;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:700;
+    font-size:16px;
+}
+
+.user-header{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.avatar-large{
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#8b5cf6,#06b6d4);
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+    font-weight:700;
+
+    flex-shrink:0;
+}

@@ -36,16 +36,16 @@
     <!-- BUTTONS -->
     <div class="nav-btns">
 
-        <a href="#" class="login-btn">
+        <a href="login.html" id="loginBtn" class="login-btn">
             <i class="fa-regular fa-user"></i> Login
         </a>
 
-        <a href="#" class="join-btn">
+        <a href="sign.html" id="joinBtn" class="join-btn">
             🚀 Join Now
         </a>
 
     </div>
-
+<div id="userInfo" style="display:none;"></div>
 </nav>
     <section class="brand-side">
       <div class="brand">Skill Swap</div>
@@ -87,10 +87,26 @@
 
         <div class="divider">or continue with</div>
 
-        <div class="socials">
-          <a href="#" class="social-btn">Google</a>
-          <a href="#" class="social-btn">GitHub</a>
-        </div>
+       <div class="social-login">
+            <button class="social-btn google">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
+              />
+              Continue with Google
+            </button>
+
+            <button class="social-btn microsoft">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/732/732221.png"
+              />
+              Continue with Microsoft
+            </button>
+
+            <button class="social-btn github">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
+              Continue with GitHub
+            </button>
+          </div>
 
         <div class="signup">
           Don't have an account? <a href="sign.html">Sign up</a>
@@ -99,7 +115,8 @@
     </section>
   </div>
 
-<script src="backend/login.js" defer></script>
+<script src="../backend/login.js" defer></script>
+<script src="../backend/navbar.js" defer></script>
     <body>
 
      
